@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-ho&0=zk3edt3&fpsu^vip=9(e9-7=&doci$cqkkz2vh#)6ke)-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-renatolemes-restaurantp-jd0o4tqwf7i.ws-eu104.gitpod.io']
+ALLOWED_HOSTS = ['8000-renatolemes-restaurantp-jd0o4tqwf7i.ws-eu104.gitpod.io', 'https://127.0.0.1:8000']
+
+CSRF_TRUSTED_ORIGINS = ['https://8000-renatolemes-restaurantp-jd0o4tqwf7i.ws-eu104.gitpod.io']
 
 
 # Application definition

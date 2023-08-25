@@ -1,0 +1,17 @@
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" type="text/css" href="css/auth.css">
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h2>Login</h2>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Login</button>
+    </form>
+    <a href="{% url 'register' %}">Don't have an account? Register</a>
+  </div>
+{% endblock %}
