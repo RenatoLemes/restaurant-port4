@@ -7,6 +7,11 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
+from django.views import generic, View
+
+
+def home(request):
+    return render(request, 'index.html')
 
 def register(request):
     if request.method == 'POST':
