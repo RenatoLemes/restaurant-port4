@@ -26,11 +26,12 @@ DISABLE_COLLECTSTATIC = '1'
 SECRET_KEY = 'django-insecure-ho&0=zk3edt3&fpsu^vip=9(e9-7=&doci$cqkkz2vh#)6ke)-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['8000-renatolemes-restaurantp-jd0o4tqwf7i.ws-eu104.gitpod.io', 'https://127.0.0.1:8000']
+ALLOWED_HOSTS = ['8000-renatolemes-restaurantp-jd0o4tqwf7i.ws-eu104.gitpod.io', 'https://127.0.0.1:8000', 'https://restaurant-project-renato-68860e9eb1b4.herokuapp.com']
 
 CSRF_TRUSTED_ORIGINS = ['https://8000-renatolemes-restaurantp-jd0o4tqwf7i.ws-eu104.gitpod.io']
+
 
 
 # Application definition
