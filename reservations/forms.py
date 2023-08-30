@@ -4,4 +4,5 @@ from .models import Reservation
 class ReservationForm(forms.ModelForm):
     class Meta:
         model = Reservation
-        fields = ['table', 'date_time', 'guest_name', 'guest_count']
+        fields = ['table', 'guest_name', 'guest_count']
+         #'date_time'

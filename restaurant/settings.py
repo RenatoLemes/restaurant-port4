@@ -12,9 +12,18 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
+
+if os.path.isfile("env.py"):
+    import env
+
+CLOUDINARY_STORAGE = {
+    'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL')
+}
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 DISABLE_COLLECTSTATIC = '1'
 
@@ -33,7 +42,6 @@ ALLOWED_HOSTS = ['8000-renatolemes-restaurantp-jd0o4tqwf7i.ws-eu104.gitpod.io', 
 CSRF_TRUSTED_ORIGINS = ['https://8000-renatolemes-restaurantp-jd0o4tqwf7i.ws-eu104.gitpod.io']
 
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -45,6 +53,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'reservations',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -61,7 +71,7 @@ ROOT_URLCONF = 'restaurant.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates'),],
+        'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
