@@ -17,15 +17,11 @@ import dj_database_url
 if os.path.isfile("env.py"):
     import env
 
-CLOUDINARY_STORAGE = {
-    'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL')
-}
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
-DISABLE_COLLECTSTATIC = '1'
+# DISABLE_COLLECTSTATIC = '1'
 
 
 # Quick-start development settings - unsuitable for production
@@ -35,7 +31,7 @@ DISABLE_COLLECTSTATIC = '1'
 SECRET_KEY = 'django-insecure-ho&0=zk3edt3&fpsu^vip=9(e9-7=&doci$cqkkz2vh#)6ke)-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['8000-renatolemes-restaurantp-jd0o4tqwf7i.ws-eu104.gitpod.io', 'https://127.0.0.1:8000', 'https://restaurant-project-renato-68860e9eb1b4.herokuapp.com']
 
@@ -54,8 +50,6 @@ INSTALLED_APPS = [
     'reservations',
 ]
 
-SITE_ID = 1
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -71,7 +65,7 @@ ROOT_URLCONF = 'restaurant.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATES_DIR],
+        'DIRS': [TEMPLATES_DIR], #
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -132,6 +126,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
+MEDIA_URL = '/media/'
+# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+# STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 STATIC_URL = 'static/'
 
 # Default primary key field type

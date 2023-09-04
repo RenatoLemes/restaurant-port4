@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Table, Reservation
+from .models import Table, Reservation ###
 from .forms import ReservationForm
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.models import Group
@@ -7,7 +7,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
-from django.views import generic, View
+from django.views import generic, View #generic
 
 
 def home(request):
