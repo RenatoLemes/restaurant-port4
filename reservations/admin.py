@@ -17,7 +17,7 @@ class TableAdmin(admin.ModelAdmin):
     search_fields = ['table_number', ]
 
 
-@admin.register(Booking)
+@admin.register(Reservation)
 class BookingAdmin(admin.ModelAdmin):
 
     list_display = ('id', 'guest_name', 'table', 'date_time',)
